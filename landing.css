@@ -1,0 +1,4 @@
+* {
+    /*font shorthand for: style:normal, Weight:normal, Size: 100% (16px), Height:1.5x, Family: sans-serif */
+    font: normal normal 100%/1.5 'Play', sans-serif;; 
+}
