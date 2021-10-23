@@ -1,2 +1,23 @@
 
+* {
+    /*font shorthand for: style:normal, Weight:normal, Size: 100% (16px), Height:1.5x, Family: sans-serif */
+    font: normal normal 100%/1.5 sans-serif; 
+}
 
+
+
+.align-center {
+    text-align: center;
+}
+
+
+#bold {
+    font-weight: bold;
+}
+
+h1 {
+    /*Element will take around 3.5% of window height*/
+    font-size: 4.5vh; 
+
+    font-weight: bolder;
+}

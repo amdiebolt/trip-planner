@@ -1,43 +1,70 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href='style.css'>
-    <title>Trip Planner</title>
-</head>
-<body>
-    <header class='align-center'>
-        <div class="callout secondary">
-            <h1>Trip Planner</h1>
-            <p>When you're on the go, see a show!</p>
-        </div>
-    </header>
-    <section>
-        <form>
-            <div class="grid-container">
+
+    <head>
+        <!-- Encode Unicode Characters -->
+        <meta charset="UTF-8" />
+        <!-- Allows servers to gather information -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Scales site to viewport height and width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Link jQuery stylesheet for Foundation framework -->
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+        <!-- Linking Foundation Framework  -->
+        <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" 
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" 
+        crossorigin="anonymous" />
+        
+        <!-- Linking CSS stylesheet -->
+        <link rel="stylesheet" href='style.css' />
+        <!-- Favicon Icon -->
+        <link rel="icon" href="./map.png" />
+        <!-- Name on browser tab -->
+        <title>Trip Planner</title>
+    </head>
+
+    <body>
+
+        <header class='align-center'>
+            <section class="callout secondary">
+                <h1>Trip Planner</h1>
+                <p>When you're on the go, see a show!</p>
+            </section>
+        </header>
+
+        <main>
+
+            <form>
+                <div class="grid-container">
  
-                    <div class="medium-6 cell">
-                         <label>Search your destination below!
-                            <input type="text" placeholder="Where to?">
-                            <div class="input-group-button">
-                                <input type="submit" class="button" value="Submit">
-                            </div>
-                        </label>
-                    </div>
-            </div>
-         </form>
-    </section>
- 
-    
+                        <div class="medium-6 cell">
+
+                            <label class="align-center">Search your destination below!
+                                <p class="callout warning ">
+                                    Welcome to our <span id="bold">Trip Planner</span> website! <br /> This site is intended for those who like to travel spur of the moment and explore the city! <br>
+                                     All you have to do is type out the location that you are going to in a City, State format (i.e. San Diego, CA) and click search! <br/>
+                                     We will bring up a new page that will provide you with a 5 day weather forcast and some ideas as to what to do in the city as well! Give it a try and let us know what you think!
+                                </p>
+
+                                <input type="text" placeholder="Where to?">
+
+                                <div class="input-group-button">
+                                    <input type="submit" class="button" value="Let's Go!">
+                                </div>
+                            </label>
+                        </div>
+                </div>
+            </form>
+        </main>
 
 
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    </body>
 </html>
