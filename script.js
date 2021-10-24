@@ -1,9 +1,9 @@
 var buttonEl = document.querySelector('.button')
 
 
-function getRepo(){
-   
-    wind.location.replace('./landing.html')
+buttonEl.addEventListener('click', getRepo())
+function getRepo(event){
+    event.preventDefault()
+    location.assign('\landing.html')
 }
 
-buttonEl.addEventListener('click', getRepo())
