@@ -1,9 +1,27 @@
-var buttonEl = document.querySelector('.button')
+var inputEl = document.querySelector('input[name="searchCity"]')
 
 
-buttonEl.addEventListener('click', getRepo())
+
+
+
+
+
 function getRepo(event){
+
     event.preventDefault()
-    location.assign('\landing.html')
+
+    var city = inputEl.value.trim()
+    
+    console.log(typeof (city))
+
+    if(!city){
+        return
+    }
+
+    localStorage.setItem("cityName", city)
+
+    location.assign('./landing.html')
+
 }
 
+document.getElementById("submit").addEventListener("click", getRepo)
