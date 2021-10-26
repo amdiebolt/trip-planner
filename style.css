@@ -2,14 +2,24 @@
 
 * {
     /*font shorthand for: style:normal, Weight:normal, Size: 100% (16px), Height:1.5x, Family: sans-serif */
-    font: normal normal 100%/1.5 'Play', sans-serif;; 
+    font: normal normal 100%/1.5 'Play', sans-serif; 
 }
-
-
+head {
+    background: white;
+}
+body {
+    background: url(http://www.studentuniverse.com/blog/wp-content/uploads/2014/04/Santorini-Greece.jpg) no-repeat center center fixed;;
+}
 
 .align-center {
     text-align: center;
     font-family: 'Play', sans-serif;
+}
+
+
+.title {
+    font-size: 7vh;
+    text-shadow:-1.5px -1.5px 0 rgba(190, 190, 190, 0.993), 1px -1px 0 rgb(148, 148, 148), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(255, 255, 255);
 }
 
 
@@ -21,32 +31,64 @@ h1 {
     /*Element will take around 3.5% of window height*/
     font-size: 4.5vh; 
     font-family: 'Play', sans-serif;
-    
     font-weight: bolder;
+    text-shadow: rgb(201, 201, 201) 3px 3px 4px;
 }
-
 
 h2 {
     font-size: 4vh;
     font-family: 'Play', sans-serif;
+    text-shadow: rgb(172, 172, 172) 3px 3px 4px;
+    font-weight: bolder;
 }
 
 .card-divider {
     text-decoration: underline;
+    text-shadow: rgb(201, 201, 201) 3px 3px 4px;
 
 }
-
-
 
 .cell {
     text-decoration: none;
+}
+
+/*back to search link*/
+a {
+    padding: 8px;
+    background-color: rgb(0, 167, 245);
+    color: black;
+    border-radius: 10px;
+    box-shadow: grey 3px 3px 5px;
+}
+
+/*Hover effect for back to search link*/
+a:hover {
+    background-color: rgb(0, 0, 0);
+    box-shadow: grey 6px 6px 6px;
+    transition: .45s;
+    color: rgb(0, 188, 245); ;
+}
+
+#submit {
+    background-color: rgb(0, 167, 245);
+    color: black;
+    border-radius: 10px;
+    line-height: 0;
+    padding: 20px;
+    width: 175px;
+    height: 45px;
+    font-size: 25px;
+    box-shadow: grey 3px 3px 5px;
     
 }
 
-a {
-    color: black;
+#submit:hover {
+    background-color: rgb(0, 0, 0);
+    box-shadow: grey 6px 6px 5px;
+    transition: .45s;
+    color: rgb(0, 188, 245); ;
+  
 }
-a:hover {
-    color: rgb(0, 167, 245);
-}
+
+
 
