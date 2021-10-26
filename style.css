@@ -24,3 +24,29 @@ h1 {
     
     font-weight: bolder;
 }
+
+
+h2 {
+    font-size: 4vh;
+    font-family: 'Play', sans-serif;
+}
+
+.card-divider {
+    text-decoration: underline;
+
+}
+
+
+
+.cell {
+    text-decoration: none;
+    
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: rgb(0, 167, 245);
+}
+
