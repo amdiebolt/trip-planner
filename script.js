@@ -11,7 +11,6 @@ function getRepo(event){
     event.preventDefault()
 
     var city = inputEl.value.trim()
-    console.log(city)
 
     if(!city){
         return
