@@ -1,5 +1,6 @@
 // Variables
-var ticketMasterCont = document.querySelector("#ticketCont");
+var title = document.querySelector("#titleHeader")
+var ticketMasterCont = document.querySelector("#ticketCont")
 var weatherCont = document.querySelector("#weatherCont")
 
 
@@ -20,12 +21,10 @@ var tRootURL = "https://app.ticketmaster.com/discovery/v2/events?"
 var tAPIKey ="&apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0"
 
 
-
-
-
 function getWeatherAPI(city){
     weatherCont.innerHTML = ""
     ticketMasterCont.innerHTML = ""
+    
 
 
     // testing data and grabbing latitude and longitude
@@ -50,10 +49,10 @@ function getWeatherAPI(city){
                     var xdata = wData
                     console.log(xdata)
                 
-                    var cityTitle = document.createElement("h2")
-                    cityTitle.textContent = city.toUpperCase() + " "  + moment.unix(wData.city.sunrise).format("YYYY/MM/DD")
+                    var cityTitle = document.createElement("h1")
+                    cityTitle.textContent = city.toUpperCase() + " " + moment.unix(wData.city.sunrise).format("DD/MM/YYYY")
+                    title.prepend(cityTitle)
                 
-                    weatherCont.append(cityTitle)
 
                 })
 
@@ -65,7 +64,6 @@ function getWeatherAPI(city){
 function getLocalValue(){
     //get access to storage and save city location to a variable
     let myStorage = window.localStorage
-    console.log(myStorage)
     let cityName = myStorage.cityName
     console.log(cityName)
 
