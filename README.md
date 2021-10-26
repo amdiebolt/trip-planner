@@ -30,11 +30,11 @@ https://amdiebolt.github.io/trip-planner/
 
 
 ## Acknowledgements
-- []()
-- []()
-- []()
-- []()
-- []()
+- [Foundation Framework](https://get.foundation/sites/docs/)
+- [moment.js](https://momentjs.com/guides/)
+- [OpenWeathermap Weather API](https://openweathermap.org/api/one-call-api)
+- [Ticketmaster API]()
+- [OpenWeatherMap Geolocation API](https://openweathermap.org/api/geocoding-api)
 - []()
 - []()
 - []()
