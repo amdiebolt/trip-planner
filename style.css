@@ -8,7 +8,8 @@ head {
     background: white;
 }
 body {
-    background: url(http://www.studentuniverse.com/blog/wp-content/uploads/2014/04/Santorini-Greece.jpg) no-repeat center center fixed;;
+    background: url(http://www.studentuniverse.com/blog/wp-content/uploads/2014/04/Santorini-Greece.jpg) no-repeat center center fixed;
+    
 }
 
 .align-center {
@@ -67,6 +68,7 @@ a:hover {
     box-shadow: grey 6px 6px 6px;
     transition: .45s;
     color: rgb(0, 188, 245); ;
+    opacity: 0.7;
 }
 
 #submit {
@@ -77,7 +79,7 @@ a:hover {
     padding: 20px;
     width: 175px;
     height: 45px;
-    font-size: 25px;
+    font-size: 28px;
     box-shadow: grey 3px 3px 5px;
     
 }
@@ -86,8 +88,8 @@ a:hover {
     background-color: rgb(0, 0, 0);
     box-shadow: grey 6px 6px 5px;
     transition: .45s;
-    color: rgb(0, 188, 245); ;
-  
+    color: rgb(0, 188, 245);
+    opacity: 0.75;
 }
 
 
