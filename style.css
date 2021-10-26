@@ -4,17 +4,26 @@
     /*font shorthand for: style:normal, Weight:normal, Size: 100% (16px), Height:1.5x, Family: sans-serif */
     font: normal normal 100%/1.5 'Play', sans-serif; 
 }
-head {
-    background: white;
-}
+
 body {
     background: url(http://www.studentuniverse.com/blog/wp-content/uploads/2014/04/Santorini-Greece.jpg) no-repeat center center fixed;
-    
+}
+
+.landing {
+    background: url(https://images.unsplash.com/photo-1504121449080-76ab9eb5bd2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80) no-repeat center center fixed;
+    background-size: cover;
 }
 
 .align-center {
     text-align: center;
     font-family: 'Play', sans-serif;
+    font-size: 18px;
+    
+}
+
+.align-center p {
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 
@@ -53,6 +62,28 @@ h2 {
     text-decoration: none;
 }
 
+/*Submit (search) button styling*/
+#submit {
+    background-color: rgb(0, 167, 245);
+    color: black;
+    border-radius: 10px;
+    line-height: 0;
+    padding: 20px;
+    width: 175px;
+    height: 45px;
+    font-size: 28px;
+    box-shadow: grey 3px 3px 5px;
+    
+}
+/*Submit button styling*/
+#submit:hover {
+    background-color: rgb(0, 0, 0);
+    box-shadow: grey 6px 6px 5px;
+    transition: .45s;
+    color: rgb(0, 188, 245);
+    opacity: 0.75;
+}
+
 /*back to search link*/
 a {
     padding: 8px;
@@ -71,26 +102,6 @@ a:hover {
     opacity: 0.7;
 }
 
-#submit {
-    background-color: rgb(0, 167, 245);
-    color: black;
-    border-radius: 10px;
-    line-height: 0;
-    padding: 20px;
-    width: 175px;
-    height: 45px;
-    font-size: 28px;
-    box-shadow: grey 3px 3px 5px;
-    
-}
-
-#submit:hover {
-    background-color: rgb(0, 0, 0);
-    box-shadow: grey 6px 6px 5px;
-    transition: .45s;
-    color: rgb(0, 188, 245);
-    opacity: 0.75;
-}
 
 
 
