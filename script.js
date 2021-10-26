@@ -11,8 +11,7 @@ function getRepo(event){
     event.preventDefault()
 
     var city = inputEl.value.trim()
-    
-    console.log(typeof (city))
+    console.log(city)
 
     if(!city){
         return
@@ -63,4 +62,4 @@ function getRepo(event){
 
 
 
- document.getElementById("button").addEventListener("click", getRepo)
+ document.getElementById("submit").addEventListener("click", getRepo)
