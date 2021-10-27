@@ -102,6 +102,50 @@ a:hover {
     opacity: 0.7;
 }
 
+/* Top scroll */
+.first-inner-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+#shadow {
+    padding: 20px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+/* Down arrow */
+.down-arrow {
+    font-size: 40px;
+    color: #fff;
+    }
+
+body, html {
+    height: 100%;
+  }
+  
+  .parallax {
+    /* The image used */
+    background-image: url('img_parallax.jpg');
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
 
 
 

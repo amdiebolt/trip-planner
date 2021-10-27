@@ -22,6 +22,8 @@
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" 
         crossorigin="anonymous" />
         
+        <!-- AOS style -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <!-- Linking CSS stylesheet -->
         <link rel="stylesheet" href='style.css' />
         <!-- Favicon Icon -->
@@ -31,7 +33,12 @@
     </head>
 
     <body>
-
+        <div class="first-inner-div">
+            <p id="shadow">Scroll down</p>
+            <span class="glyphicon glyphicon-circle-arrow-down down-arrow"></span>     
+        </div>
+          
+        <div class="parallax"></div>
         <header class='align-center'>
             <section class="callout secondary">
                 <h1 class="title">Trip Planner</h1>
@@ -41,7 +48,7 @@
 
         <main>
 
-            <form>
+            <form data-aos="zoom-in-up"  data-aos-duration="4000" >
                 <div class="grid-container">
  
                         <div class="medium-6 cell">
@@ -67,7 +74,13 @@
                 </div>
             </form>
         </main>
+        <div class="parallax"></div>
 
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
         <!-- Linking Foundation Framework -->
         <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
         <!-- Linking JS script -->
