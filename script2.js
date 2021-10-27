@@ -3,6 +3,7 @@ var title = document.querySelector("#titleHeader")
 var ticketMasterCont = document.querySelector(".ticketCont")
 var weatherCont = document.querySelector(".weatherCont")
 var dateTitle = document.querySelector(".showDate")
+// var weatherBlock = document.querySelector(".weatherBlock")
 
 
 var wAPIKey = "&appid=966a86c8bd69d14a621d45a4cd70fed2"
@@ -12,8 +13,9 @@ var wAPIKey = "&appid=966a86c8bd69d14a621d45a4cd70fed2"
 var wGeoRootURL = "https://api.openweathermap.org/geo/1.0/direct?q="
 var paramGeo =",US&limit=5"
 
-//api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
-var wRootURL = "https://api.openweathermap.org/data/2.5/forecast?q="
+//api.openweathermap.org/data/2.5/forecast?lat={city lat}&lon={city lon}&appid={API key}
+var wRootURL = "https://api.openweathermap.org/data/2.5/forecast?lat="
+var lon = "&lon="
 var paramWeath = "&units=imperial"
 
 
@@ -24,13 +26,13 @@ var tAPIKey ="&apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0"
 
 
 function getWeatherAPI(city){
-    //weatherCont.innerHTML = ""
+    // weatherCont.innerHTML = ""
     //ticketMasterCont.innerHTML = ""
     
 
 
     // testing data and grabbing latitude and longitude
-    var wURL = wGeoRootURL + city + paramGeo + wAPIKey
+    var wURL = wGeoRootURL +  city + paramGeo + wAPIKey
 
     fetch(wURL)
         .then(function(response){
@@ -39,57 +41,72 @@ function getWeatherAPI(city){
     
         .then(function(data){
             var geodata = data[0]
-            console.log(geodata)
         
-            var w5dayURL = wRootURL + city + paramWeath + wAPIKey
-            console.log(w5dayURL)
+            var w5dayURL = wRootURL + geodata.lat + lon + geodata.lon + paramWeath + wAPIKey
+
             fetch(w5dayURL)
                 .then(function(response){
                     return response.json()
                 })
                 .then(function(wData){
                     var cityData = wData
-                    console.log(cityData)
+                    // console.log(cityData)
                 
                     var cityTitle = document.createElement("h1")
                     cityTitle.textContent = city.toUpperCase() + " " + moment.unix(wData.city.sunrise).format("DD/MM/YYYY")
                     title.prepend(cityTitle)
-                
-                    // Set up the daily weather containers in enirety
-                    var 
 
                     // I think this needs to be in a loop
-                    for(var i = 0; i < wData.list.length; i++){
+                    for(var i = 0; i < wData.list.length; i=i+8){
                         var thisDate = wData.list[i]
+                        // Set up the daily weather containers in enirety
+                    
+                        var wCardCol = document.createElement("div")
+                        wCardCol.className = "card"
+                        wCardCol.setAttribute("style", "width: 300px;")
+                        
+                        var todayDate = document.createElement("div")
+                        todayDate.className = "card-divider align-center"
+                        todayDate.textContent = moment.unix(thisDate.dt).format("DD-MM-YYYY")
+                        wCardCol.append(todayDate)
+                        // moment.unix(thisDate.dt).format("DD-MM-YYYY")
+                        
+                        var wBlock = document.createElement("div")
+                        wBlock.className = "card-section weatherBlock"
+                        // Should I add the icon for the daily weather?
+
+                        var wList = document.createElement("div")
+                        wList.className = "card-section weatherBlock"
+                    
+                        var ulItem = document.createElement("ul")
+                    
+
+                        var dayDesc = document.createElement("li")
+                        dayDesc.textContent = thisDate.weather[0].description
+                        ulItem.append(dayDesc)
+
+                        var dayTemp = document.createElement("li")
+                        dayTemp.textContent = "Temp: \n" + thisDate.main.temp + "\u00B0F"
+                        ulItem.append(dayTemp)
+
+                        var dayWind = document.createElement("li")
+                        dayWind.textContent = "Wind: \n" + thisDate.wind.speed + "MPH"
+                        ulItem.append(dayWind)
+                    
+                        var dayHumid = document.createElement("li")
+                        dayHumid.textContent = "Humidity: \n" + thisDate.main.humidity + "%"
+                        ulItem.append(dayHumid)
+                    
+                    
+                        wList.append(ulItem)
+                        wBlock.append(wList)
+                        wCardCol.append(wBlock)
+                        weatherCont.append(wCardCol)
+
                         console.log(thisDate)
                         console.log(i)
-                        console.log("this should be the date " + moment.unix(thisDate.dt).format("DD-MM-YYYY"))
-                        console.log("This shoud be the temperature " + thisDate.main.temp)
-                        console.log("This should be wind " + thisDate.wind.speed)
-                        console.log("This should be humidity " + thisDate.main.humidity)
-                        console.log("This should be description of weather " + thisDate.weather[0].description )
-                        
                     
                     }
-                    // var today = cityData.
-                    // var wTitle = document.createElement("h2")
-                    // var wTitle.textContent = moment.unix(cityData.sunrise)
-                    // console.log("this should be the date " + moment.unix(cityData.list[0].dt).format("DD-MM-YYYY"))
-                    // console.log("This shoud be the temperature " + cityData.list[0].main.temp)
-                    // console.log("This should be wind " + cityData.list[0].wind.speed)
-                    // console.log("This should be humidity " + cityData.list[0].main.humidity)
-                    // console.log("This should be description of weather " + cityData.list[0].weather[0].description )
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-                    console.log()
-
                 })
 
         })
@@ -101,7 +118,6 @@ function getLocalValue(){
     //get access to storage and save city location to a variable
     let myStorage = window.localStorage
     let cityName = myStorage.cityName
-    console.log(cityName)
 
     getWeatherAPI(cityName)
 }
