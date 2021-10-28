@@ -114,9 +114,16 @@ function getWeatherAPI(city){
 
 }
 
-function getTickets(city){
-    var tURL = tRootURL + city + '&preferredCountry=us' + tAPIKey
+// enddatetime format: 
+var proper = "2019-10-26T03:00:00Z"
+console.log(proper.length)
 
+
+function getTickets(city){
+   
+    
+    var tURL = tRootURL + city + '&preferredCountry=us' + '&' + 'endDateTime=' + endDateTime + tAPIKey
+    console.log(endDateTime)
 
     fetch(tURL)
     .then(function(response){
@@ -127,7 +134,7 @@ function getTickets(city){
        // var cityData = Data
         // console.log(cityData)
         var  ticketData = data._embedded.events
-        console.log(ticketData)
+        console.log(data)
 
     
         var ticketBlock = document.querySelector('.ticketBlock')
@@ -159,6 +166,7 @@ function getTickets(city){
 
     
 })}
+
 function getLocalValue(){
     //get access to storage and save city location to a variable
     let myStorage = window.localStorage
@@ -168,5 +176,17 @@ function getLocalValue(){
     getTickets(cityName)
 }
 
+var endDateTime = new Date();
+var numberOfDaysToAdd = 5;
+endDateTime.setDate(endDateTime.getDate() + numberOfDaysToAdd)
+//console.log(endDateTime)
+//console.log(endDateTime.toISOString())
+endDateTime = endDateTime.toISOString()
+console.log(endDateTime.length)
+var string = endDateTime
+var tempArray = string.split('')
+tempArray.splice(19, 4)
+endDateTime = tempArray.join('')
+console.log(endDateTime)
 
 getLocalValue();
