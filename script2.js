@@ -19,7 +19,7 @@ var paramWeath = "&units=imperial"
 
 //https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0
 //&radius=30&unit=miles&source=ticketmaster&locale=*&endDateTime=2021-10-29T19:35:00Z&size=5&city=los%20angeles&stateCode=CA&preferredCountry=us
-var tRootURL = "https://app.ticketmaster.com/discovery/v2/events?"
+var tRootURL = "https://app.ticketmaster.com/discovery/v2/events?city="
 var tAPIKey ="&apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0"
 
 
@@ -99,7 +99,7 @@ function getWeatherAPI(city){
                     
                         wList.append(ulItem)
                         wBlock.append(wList)
-                        wCardCol.append(wBlock)
+                        wCardCol.append(wBlock) 
                         weatherCont.append(wCardCol)
 
                         console.log(thisDate)
@@ -114,13 +114,58 @@ function getWeatherAPI(city){
 
 }
 
+function getTickets(city){
+    var tURL = tRootURL + city + '&preferredCountry=us' + tAPIKey
 
+
+    fetch(tURL)
+    .then(function(response){
+        return response.json()
+    })
+    // 
+    .then(function(data){
+       // var cityData = Data
+        // console.log(cityData)
+        var  ticketData = data._embedded.events
+        console.log(ticketData)
+
+    
+        var ticketBlock = document.querySelector('.ticketBlock')
+        for(var i = 0; i < ticketData.length; i=i+4){
+   
+            var eventTitle = document.createElement("li")
+            //eventTitle.textContent = 
+            var anchor = document.createElement("a")
+            anchor.setAttribute('href', ticketData[i].url)
+            anchor.innerText = ticketData[i].name
+            eventTitle.append(anchor)
+            ticketBlock.append(eventTitle)
+
+            var eventDate = document.createElement("li")
+            eventDate.textContent = ticketData[i].dates.start.localDate
+            ticketBlock.append(eventDate)
+            
+            var eventLoc = document.createElement("li")
+            eventLoc.textContent = ticketData[i]._embedded.venues[0].name
+            ticketBlock.append(eventLoc)
+
+            var eventPrice = document.createElement("li")
+            eventPrice.textContent = '$' + ticketData[i].priceRanges[0].min + '-' + ticketData[i].priceRanges[0].max
+            ticketBlock.append(eventPrice)
+            var breakEl = document.createElement("br")
+            ticketBlock.append(breakEl)
+
+        }
+
+    
+})}
 function getLocalValue(){
     //get access to storage and save city location to a variable
     let myStorage = window.localStorage
     let cityName = myStorage.cityName
 
     getWeatherAPI(cityName)
+    getTickets(cityName)
 }
 
 
