@@ -72,8 +72,7 @@ h2 {
     width: 175px;
     height: 45px;
     font-size: 28px;
-    box-shadow: grey 3px 3px 5px;
-    
+    box-shadow: grey 3px 3px 5px;   
 }
 /*Submit button styling*/
 #submit:hover {
@@ -144,6 +143,11 @@ body, html {
     background-size: cover;
   }
 
+ul {
+    list-style: none;
+    
+    
+}
 
 
 
