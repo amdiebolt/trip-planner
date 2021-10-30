@@ -52,14 +52,20 @@ h2 {
     font-weight: bolder;
 }
 
-.card-divider {
-    text-decoration: underline;
-    text-shadow: rgb(201, 201, 201) 3px 3px 4px;
+/* .card {
+    background-color: rgb(124, 124, 194);
+} */
 
-}
 
-.cell {
+
+/* .flex-container {
+    background-color: black;
+} */
+
+.card-section {
+    background-color: rgb(127, 127, 218);
     text-decoration: none;
+    text-shadow: rgb(99, 99, 99) 4px 4px 4px;
 }
 
 /*Submit (search) button styling*/
@@ -72,8 +78,7 @@ h2 {
     width: 175px;
     height: 45px;
     font-size: 28px;
-    box-shadow: grey 3px 3px 5px;
-    
+    box-shadow: grey 3px 3px 5px;   
 }
 /*Submit button styling*/
 #submit:hover {
@@ -84,23 +89,43 @@ h2 {
     opacity: 0.75;
 }
 
-/*back to search link*/
+/*Styling for anchor tags for all events*/
 a {
+    color: black;
+    border-radius: 10px;
+    text-shadow: grey 3px 3px 5px;
+    box-sizing: 50px;
+}
+
+/*Hover effect for anchor tags for events*/
+a:hover {
+    background-color: rgb(0, 0, 0);
+    box-shadow: grey 6px 6px 6px;
+    transition: .45s;
+    color: rgb(0, 188, 245); ;
+    opacity: 0.9;
+}
+
+/*Styling for Back to Search footer link*/
+.back {
     padding: 8px;
     background-color: rgb(0, 167, 245);
     color: black;
     border-radius: 10px;
     box-shadow: grey 3px 3px 5px;
+    bottom: 0%;
+    position: absolute;
 }
 
 /*Hover effect for back to search link*/
-a:hover {
+.back:hover {
     background-color: rgb(0, 0, 0);
     box-shadow: grey 6px 6px 6px;
     transition: .45s;
     color: rgb(0, 188, 245); ;
     opacity: 0.7;
 }
+
 
 /* Top scroll */
 .first-inner-div {
@@ -144,6 +169,11 @@ body, html {
     background-size: cover;
   }
 
+ul {
+    list-style: none;
+
+    
+}
 
 
 
