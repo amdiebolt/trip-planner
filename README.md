@@ -18,6 +18,12 @@ https://amdiebolt.github.io/trip-planner/
 - Foundation
 - Wireframe.cc
 
+## Contributors 
+- [Alex Diebolt](https://github.com/amdiebolt)
+- [Thao Nguyen](https://github.com/teeteathao)
+- [Daniel Beck](https://github.com/beckdan)
+- [Caroline Pastorelli](https://github.com/cpastorelli)
+
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
