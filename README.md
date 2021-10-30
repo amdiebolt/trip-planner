@@ -10,6 +10,7 @@ https://amdiebolt.github.io/trip-planner/
 ## Visual
 
 [![front.png](https://i.postimg.cc/Px4GmSC7/front.png)](https://postimg.cc/JDGd8cc3)
+[![Landing.png](https://i.postimg.cc/hGjKSZgL/Landing.png)](https://postimg.cc/cvVphmvC)
 
 ## Built With
 - HTML
