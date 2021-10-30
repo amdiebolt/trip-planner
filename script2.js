@@ -51,7 +51,7 @@ function getWeatherAPI(city){
                 
                     // Create header element, set value to city + todays date, and add to top of page
                     var cityTitle = document.createElement("h1")
-                    cityTitle.textContent = city.toUpperCase() + " " + moment.unix(wData.city.sunrise).format("DD/MM/YYYY")
+                    cityTitle.textContent = city.toUpperCase() + " " + moment.unix(wData.city.sunrise).format("YYYY/MM/DD")
                     title.prepend(cityTitle)
 
                     // 
@@ -66,7 +66,7 @@ function getWeatherAPI(city){
                         // Create element div for the date, append to the weather column card
                         var todayDate = document.createElement("div")
                         todayDate.className = "card-divider align-center"
-                        todayDate.textContent = moment.unix(thisDate.dt).format("DD-MM-YYYY")
+                        todayDate.textContent = moment.unix(thisDate.dt).format("YYYY-MM-DD")
                         wCardCol.append(todayDate)
                         
                     
