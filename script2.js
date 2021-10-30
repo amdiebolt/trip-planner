@@ -138,7 +138,7 @@ function getTickets(city){
         // console.log(cityData)
         var  ticketData = data._embedded.events
         //console.log(data)
-
+        var targetBlank = 'target'
     
         var ticketBlock = document.querySelector('.ticketBlock')
         for(var i = 0; i < ticketData.length; i=i+4){
@@ -147,6 +147,7 @@ function getTickets(city){
             //eventTitle.textContent = 
             var anchor = document.createElement("a")
             anchor.setAttribute('href', ticketData[i].url)
+            anchor.setAttribute('target', '_blank')
             anchor.innerText = ticketData[i].name
             eventTitle.append(anchor)
             ticketBlock.append(eventTitle)
