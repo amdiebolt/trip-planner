@@ -4,12 +4,6 @@
 
 This project was built with the idea that if we wish to visit a city, we would have the ability to see the weather and look at any events that would happen within the next few days. Playing with both the OpenWeatherMap and Ticketmaster APIs, we were able to create something that would assist anyone who was new to a city explore the area or figure out what to do with some last minute spare time.
 
-Some challenges .....
-
-Lessons learned with Foundation....
-
-API lessons....
-
 ## Link
 https://amdiebolt.github.io/trip-planner/
 
@@ -35,6 +29,3 @@ https://amdiebolt.github.io/trip-planner/
 - [OpenWeathermap Weather API](https://openweathermap.org/api/one-call-api)
 - [Ticketmaster API]()
 - [OpenWeatherMap Geolocation API](https://openweathermap.org/api/geocoding-api)
-
-
-

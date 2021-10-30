@@ -50,55 +50,55 @@ function getWeatherAPI(city){
                 
                     // Create header element, set value to city + todays date, and add to top of page
                     var cityTitle = document.createElement("h1")
-                    cityTitle.textContent = city.toUpperCase() + " " + moment.unix(wData.city.sunrise).format("DD/MM/YYYY")
+                    cityTitle.textContent = city.toUpperCase() + " " + moment.unix(wData.city.sunrise).format("YYYY/MM/DD")
                     title.prepend(cityTitle)
 
                     // 
                     for(var i = 0; i < wData.list.length; i+=8){
                         var thisDate = wData.list[i]
+                        
                         // Set up the daily weather containers in enirety
-                    
                         var wCardCol = document.createElement("div")
                         wCardCol.className = "card"
                         wCardCol.setAttribute("style", "width: 300px;")
                         
-                        // 
+                        // Create element div for the date, append to the weather column card
                         var todayDate = document.createElement("div")
                         todayDate.className = "card-divider align-center"
-                        todayDate.textContent = moment.unix(thisDate.dt).format("DD-MM-YYYY")
+                        todayDate.textContent = moment.unix(thisDate.dt).format("YYYY-MM-DD")
                         wCardCol.append(todayDate)
                         
-                        // 
+                    
                         var wBlock = document.createElement("div")
-                        wBlock.className = "card-section weatherBlock"
+                        wBlock.className = "card-section"
                         
-                        // 
+                        // Create weather block element this will hold the ul list element
                         var wList = document.createElement("div")
                         wList.className = "card-section weatherBlock"
                     
                         var ulItem = document.createElement("ul")
                     
-                        // 
+                        // Create the days overal description list element, assign value, append to Unordered list
                         var dayDesc = document.createElement("li")
                         dayDesc.textContent = thisDate.weather[0].description
                         ulItem.append(dayDesc)
 
-                        // 
+                        // Create the days temperature list element, assign value, append to Unordered list
                         var dayTemp = document.createElement("li")
                         dayTemp.textContent = "Temp: \n" + thisDate.main.temp + "\u00B0F"
                         ulItem.append(dayTemp)
 
-                        // 
+                        // Create the days wind list element, assign value, append to Unordered list
                         var dayWind = document.createElement("li")
                         dayWind.textContent = "Wind: \n" + thisDate.wind.speed + "MPH"
                         ulItem.append(dayWind)
                     
-                        // 
+                        // Create the days humidity list element, assign value, append to Unordered list
                         var dayHumid = document.createElement("li")
                         dayHumid.textContent = "Humidity: \n" + thisDate.main.humidity + "%"
                         ulItem.append(dayHumid)
                     
-                        // 
+                        // Append Ul list to -weather list -weather block -weather card column
                         wList.append(ulItem)
                         wBlock.append(wList)
                         wCardCol.append(wBlock) 
