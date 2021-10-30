@@ -28,23 +28,22 @@ function getWeatherAPI(city){
     // var wURL = wGeoRootURL +  city + paramGeo + wAPIKey
     var wURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city},US&limit=5&appid=966a86c8bd69d14a621d45a4cd70fed2`
 
-    //
+    //fetch URL for geolocation API
     fetch(wURL)
         .then(function(response){
         return response.json()
         })
     
-        //
         .then(function(data){
             var geodata = data[0]
             var w5dayURL = wRootURL + geodata.lat + lon + geodata.lon + paramWeath + wAPIKey
 
-            //
+            //fetch URL for Weather API
             fetch(w5dayURL)
                 .then(function(response){
                     return response.json()
                 })
-                // 
+            
                 .then(function(wData){
                     var cityData = wData
                     // console.log(cityData)
@@ -63,49 +62,52 @@ function getWeatherAPI(city){
                         wCardCol.className = "card"
                         wCardCol.setAttribute("style", "width: 300px;")
                         
-                        // Should I add the icon for the daily weather?
+                        // 
                         var todayDate = document.createElement("div")
                         todayDate.className = "card-divider align-center"
                         todayDate.textContent = moment.unix(thisDate.dt).format("DD-MM-YYYY")
                         wCardCol.append(todayDate)
                         
-                        
+                        // 
                         var wBlock = document.createElement("div")
                         wBlock.className = "card-section weatherBlock"
                         
-
+                        // 
                         var wList = document.createElement("div")
                         wList.className = "card-section weatherBlock"
                     
                         var ulItem = document.createElement("ul")
                     
-
+                        // 
                         var dayDesc = document.createElement("li")
                         dayDesc.textContent = thisDate.weather[0].description
                         ulItem.append(dayDesc)
 
+                        // 
                         var dayTemp = document.createElement("li")
                         dayTemp.textContent = "Temp: \n" + thisDate.main.temp + "\u00B0F"
                         ulItem.append(dayTemp)
 
+                        // 
                         var dayWind = document.createElement("li")
                         dayWind.textContent = "Wind: \n" + thisDate.wind.speed + "MPH"
                         ulItem.append(dayWind)
                     
+                        // 
                         var dayHumid = document.createElement("li")
                         dayHumid.textContent = "Humidity: \n" + thisDate.main.humidity + "%"
                         ulItem.append(dayHumid)
                     
-                    
+                        // 
                         wList.append(ulItem)
                         wBlock.append(wList)
                         wCardCol.append(wBlock) 
                         weatherCont.append(wCardCol)
 
-                        console.log(thisDate)
-                        console.log(i)
+                        // console.log(thisDate)
+                        // console.log(i)
 
-                        //Create another fetch to grab and show data from ticketmaster
+                    
                     
                     }
                 })
@@ -116,14 +118,14 @@ function getWeatherAPI(city){
 
 // enddatetime format: 
 var proper = "2019-10-26T03:00:00Z"
-console.log(proper.length)
+//console.log(proper.length)
 
 
 function getTickets(city){
    
     
     var tURL = tRootURL + city + '&preferredCountry=us' + '&' + 'endDateTime=' + endDateTime + tAPIKey
-    console.log(endDateTime)
+    //console.log(endDateTime)
 
     fetch(tURL)
     .then(function(response){
@@ -134,7 +136,7 @@ function getTickets(city){
        // var cityData = Data
         // console.log(cityData)
         var  ticketData = data._embedded.events
-        console.log(data)
+        //console.log(data)
 
     
         var ticketBlock = document.querySelector('.ticketBlock')
@@ -182,11 +184,11 @@ endDateTime.setDate(endDateTime.getDate() + numberOfDaysToAdd)
 //console.log(endDateTime)
 //console.log(endDateTime.toISOString())
 endDateTime = endDateTime.toISOString()
-console.log(endDateTime.length)
+//console.log(endDateTime.length)
 var string = endDateTime
 var tempArray = string.split('')
 tempArray.splice(19, 4)
 endDateTime = tempArray.join('')
-console.log(endDateTime)
+//console.log(endDateTime)
 
 getLocalValue();
