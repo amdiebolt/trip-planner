@@ -64,7 +64,7 @@ function getWeatherAPI(city){
                         
                         // Create element div for the date, append to the weather column card
                         var todayDate = document.createElement("div")
-                        todayDate.className = "card-divider align-center"
+                        todayDate.className = "card-divider align-center wdate"
                         todayDate.textContent = moment.unix(thisDate.dt).format("YYYY-MM-DD")
                         wCardCol.append(todayDate)
                         

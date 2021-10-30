@@ -9,16 +9,23 @@ body {
     background: url(http://www.studentuniverse.com/blog/wp-content/uploads/2014/04/Santorini-Greece.jpg) no-repeat center center fixed;
 }
 
+
 .landing {
     background: url(https://images.unsplash.com/photo-1504121449080-76ab9eb5bd2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80) no-repeat center center fixed;
     background-size: cover;
+}
+
+.excited {
+    position: relative;
+    left: 80px;
+    font-weight: bolder;
+    font-size: 18px;
 }
 
 .align-center {
     text-align: center;
     font-family: 'Play', sans-serif;
     font-size: 18px;
-    
 }
 
 .align-center p {
@@ -26,7 +33,7 @@ body {
     font-weight: bolder;
 }
 
-
+/*Search Page title styling*/
 .title {
     font-size: 7vh;
     text-shadow:-1.5px -1.5px 0 rgba(190, 190, 190, 0.993), 1px -1px 0 rgb(148, 148, 148), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(255, 255, 255);
@@ -42,30 +49,62 @@ h1 {
     font-size: 4.5vh; 
     font-family: 'Play', sans-serif;
     font-weight: bolder;
-    text-shadow: rgb(201, 201, 201) 3px 3px 4px;
+    text-shadow: rgba(120, 95, 209, 0.712) 2px 2px 5px;
+    position: relative;
+    left: 8px;
+    margin-bottom: 1%;
+    margin-top: 0.5%;
+}
+
+
+/*Element will take around 3.5% of window height*/
+.ticket-title {
+    position: relative;
+    right: -15px;
+    text-decoration: underline rgba(0, 0, 0, 0.9);
+}
+
+.weather-title {
+    text-align: center;
+    text-decoration: underline rgba(51, 51, 51, 0.9);
 }
 
 h2 {
     font-size: 4vh;
     font-family: 'Play', sans-serif;
-    text-shadow: rgb(172, 172, 172) 3px 3px 4px;
+    text-shadow: rgba(7, 5, 12, 0.712) 2px 2px 5px;
     font-weight: bolder;
 }
 
-/* .card {
-    background-color: rgb(124, 124, 194);
-} */
+.card {
+    position: relative;
+    left: -5px;
+    padding: 0;
+    margin: 0%;
+}
 
+.weatherCont {
+    padding: 0;
+    margin: 0%;
+    align-content: center;
+}
 
-
-/* .flex-container {
-    background-color: black;
-} */
+.wdate {
+    margin: 0px;
+    background-color: rgb(127, 127, 218, 0.6);
+    box-shadow: black 5px 5px 5px;
+    font-weight: bolder;
+    font-size: 21px;
+}
 
 .card-section {
-    background-color: rgb(127, 127, 218);
+    background-color: rgb(127, 127, 218, 0.6);
     text-decoration: none;
     text-shadow: rgb(99, 99, 99) 4px 4px 4px;
+}
+
+.weatherBlock {
+    background-color: rgb(127, 127, 218, 0);
 }
 
 /*Submit (search) button styling*/
@@ -80,6 +119,7 @@ h2 {
     font-size: 28px;
     box-shadow: grey 3px 3px 5px;   
 }
+
 /*Submit button styling*/
 #submit:hover {
     background-color: rgb(0, 0, 0);
@@ -87,6 +127,7 @@ h2 {
     transition: .45s;
     color: rgb(0, 188, 245);
     opacity: 0.75;
+    margin-left: 1.3%;
 }
 
 /*Styling for anchor tags for all events*/
@@ -94,7 +135,7 @@ a {
     color: black;
     border-radius: 10px;
     text-shadow: grey 3px 3px 5px;
-    box-sizing: 50px;
+    font-weight: bolder;
 }
 
 /*Hover effect for anchor tags for events*/
@@ -103,7 +144,8 @@ a:hover {
     box-shadow: grey 6px 6px 6px;
     transition: .45s;
     color: rgb(0, 188, 245); ;
-    opacity: 0.9;
+    opacity: 0.8;
+    padding: 1%;
 }
 
 /*Styling for Back to Search footer link*/
@@ -124,8 +166,8 @@ a:hover {
     transition: .45s;
     color: rgb(0, 188, 245); ;
     opacity: 0.7;
+    padding: .6%;
 }
-
 
 /* Top scroll */
 .first-inner-div {
@@ -166,11 +208,11 @@ body, html {
     background-size: cover;
   }
 
+  /*Removing bullet points from weather and event lists*/
 ul {
     list-style: none;
-
-    
 }
+
 
 
 
