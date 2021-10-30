@@ -26,7 +26,8 @@ var tAPIKey ="&apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0"
 function getWeatherAPI(city){
     
     // testing data and grabbing latitude and longitude
-    var wURL = wGeoRootURL +  city + paramGeo + wAPIKey
+    // var wURL = wGeoRootURL +  city + paramGeo + wAPIKey
+    var wURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city},US&limit=5&appid=966a86c8bd69d14a621d45a4cd70fed2`
 
     //
     fetch(wURL)
@@ -55,7 +56,7 @@ function getWeatherAPI(city){
                     title.prepend(cityTitle)
 
                     // 
-                    for(var i = 0; i < wData.list.length; i=i+8){
+                    for(var i = 0; i < wData.list.length; i+=8){
                         var thisDate = wData.list[i]
                         // Set up the daily weather containers in enirety
                     
