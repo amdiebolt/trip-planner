@@ -136,7 +136,7 @@ function getTickets(city){
        // var cityData = Data
         // console.log(cityData)
         var  ticketData = data._embedded.events
-        //console.log(data)
+        console.log(data)
         var targetBlank = 'target'
     
         var ticketBlock = document.querySelector('.ticketBlock')
@@ -160,11 +160,21 @@ function getTickets(city){
             ticketBlock.append(eventLoc)
 
             var eventPrice = document.createElement("li")
-            eventPrice.textContent = '$' + ticketData[i].priceRanges[0].min + '-' + ticketData[i].priceRanges[0].max
-            ticketBlock.append(eventPrice)
-            var breakEl = document.createElement("br")
-            ticketBlock.append(breakEl)
-
+           
+            
+            if(ticketData[i].priceRanges){
+                
+                eventPrice.textContent = '$' + ticketData[i].priceRanges[0].min + '-' + ticketData[i].priceRanges[0].max
+                ticketBlock.append(eventPrice)
+                var breakEl = document.createElement("br")
+                ticketBlock.append(breakEl)
+            }else{
+                eventPrice.textContent = "Price Not Listed"
+                ticketBlock.append(eventPrice)
+                var breakEl = document.createElement("br")
+                ticketBlock.append(breakEl)
+            }
+        
         }
 
     
