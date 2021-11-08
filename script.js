@@ -2,7 +2,6 @@ var inputEl = document.querySelector('input[name="cityName"]')
 
 function getRepo(event){
     event.preventDefault()
-
     var city = inputEl.value.trim()
 
     if(!city){
